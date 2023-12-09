@@ -1,0 +1,17 @@
+.NavLink {
+  text-decoration: none;
+}
+.citiesContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.citiesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Add any other styles you may need */
