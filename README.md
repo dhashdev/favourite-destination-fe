@@ -1,6 +1,9 @@
 # Favourite Destination App
 
-The Favourite Destination App is a web application that allows users to explore and learn about different cities and mark them as their favorites.
+The Favourite Destination App is a web application that allows users to explore and learn about different cities and mark them as their favorites.\
+
+![Favourite Destination Logo](/public/images/logo.png)
+
 
 ## Table of Contents
 
