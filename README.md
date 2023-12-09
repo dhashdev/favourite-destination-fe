@@ -101,6 +101,4 @@ Feel free to contribute to the project. Create a pull request or open an issue t
 
 ## License
 
-```vbnet
-Feel free to copy and paste this into your project
-```
+This project is licensed under the MIT License - see the LICENSE file for details.
