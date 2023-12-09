@@ -18,7 +18,7 @@ const Login = () => {
     if (doesUserExistOnLogin) {
       navigate('/home');
     }
-  }, []);
+  }, [navigate]);
 
   // User login handler
   function handleUserLogin() {
