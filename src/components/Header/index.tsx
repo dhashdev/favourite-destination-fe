@@ -23,13 +23,9 @@ const Header = () => {
 
   return (
     <>
-      {/* AppBar component for the header */}
       <AppBar position='static' color='primary'>
-        {/* Toolbar component for the content within the header */}
         <Toolbar className='NavBarContainer'>
-          {/* Box component to align the title to the left */}
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            {/* Typography component for the app title */}
             <Link to={`/home`} className='NavLink'>
               <Typography variant='h6' component='div'>
                 Favourite Destination
@@ -37,7 +33,6 @@ const Header = () => {
             </Link>
           </Box>
 
-          {/* Box component to align navigation elements to the right */}
           <Box
             sx={{
               display: 'flex',
@@ -48,18 +43,15 @@ const Header = () => {
           >
             {/* Link component for navigating to the Favourites page */}
             <Link to='/favourites' className='NavLink'>
-              {/* Typography component for the Favourites link */}
               <Typography variant='body1' className='NavItem'>
                 <FaHeart /> Favourites
               </Typography>
             </Link>
 
-            {/* Typography component for displaying the user name */}
             <Typography variant='body1' className='UserName'>
               <FaUser /> {userName}
             </Typography>
 
-            {/* Button component for the Logout action */}
             <Button color='inherit' onClick={handleUserLogout}>
               <FaSignOutAlt /> Logout
             </Button>

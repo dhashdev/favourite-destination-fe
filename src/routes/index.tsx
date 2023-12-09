@@ -51,7 +51,15 @@ const AppRoutes: React.FC = () => {
       />
 
       {/* Default Route for Not Found Page */}
-      <Route path='*' element={<NotFound />} />
+      <Route
+        path='*'
+        element={
+          <>
+            {' '}
+            <Header /> <NotFound />
+          </>
+        }
+      />
     </Routes>
   );
 };

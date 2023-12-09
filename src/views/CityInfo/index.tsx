@@ -29,43 +29,38 @@ const CityInfo = () => {
   useAutheticate();
 
   useEffect(() => {
-    const fetchCity = async () => {
+    const fetchData = async () => {
       try {
+        // Fetch city information
         let cityResponse = await Cities.getCity(intId);
         setCity(cityResponse);
         setLoading(false);
+
+        // Fetch city image
+        if (cityResponse) {
+          const image = await CitiesImageService.getCityImage(
+            cityResponse.latitude,
+            cityResponse.longitude
+          );
+          setImageUrl(image);
+        }
+
+        // Check if the city is already in favorites
+        const storedFavouriteCities = localStorage.getItem('favouriteCities');
+        const parsedCities = storedFavouriteCities
+          ? JSON.parse(storedFavouriteCities)
+          : [];
+        const alreadyAddedToFavourite = parsedCities.some(
+          (favCity: City) => favCity.name === cityResponse?.name
+        );
+        setFavouriteDisabled(alreadyAddedToFavourite);
       } catch (error) {
         console.log('Error fetching city:', error);
       }
     };
 
-    fetchCity();
+    fetchData();
   }, [intId, key]); // Include key as a dependency
-
-  useEffect(() => {
-    const fetchImage = async () => {
-      if (city) {
-        const image = await CitiesImageService.getCityImage(
-          city.latitude,
-          city.longitude
-        );
-        setImageUrl(image);
-      }
-    };
-
-    fetchImage();
-  }, [city, key]); // Include key as a dependency
-
-  useEffect(() => {
-    const storedFavouriteCities = localStorage.getItem('favouriteCities');
-    const parsedCities = storedFavouriteCities
-      ? JSON.parse(storedFavouriteCities)
-      : [];
-    const alreadyAddedToFavourite = parsedCities.some(
-      (favCity: City) => favCity.name === city?.name
-    );
-    setFavouriteDisabled(alreadyAddedToFavourite);
-  }, [city, key]); // Include key as a dependency
 
   return (
     <Container maxWidth='md' style={{ textAlign: 'left', marginTop: '20px' }}>

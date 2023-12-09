@@ -46,7 +46,6 @@ const CityCard: React.FC<CityCardProps> = ({ city, index }) => {
         <CardContent>
           <Typography variant='h5'>{city.name}</Typography>
           <Typography variant='body2'>{city.country}</Typography>
-          {/* Other city details can be added here as needed */}
         </CardContent>
       </Card>
     </Link>

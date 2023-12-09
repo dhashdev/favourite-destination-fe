@@ -37,7 +37,6 @@ const Home = () => {
   return (
     <>
       <Box marginTop='20px' textAlign='center'>
-        {/* Display a message encouraging users to explore destinations */}
         <Typography variant='h5'>
           Select to Know more about your next destination spot!
         </Typography>
